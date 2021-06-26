@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+
+:root {
+  --primary-Very-Dark-Magenta: hsl(300, 43%, 22%);
+  --primary-Soft-Pink: hsl(333, 80%, 67%);
+
+  --neutral-Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+  --neutral-Light-Grayish-Magenta: hsl(300, 24%, 96%);
+  --neutral-White: hsl(0, 0%, 100%);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: url('./images/bg-pattern-top-desktop.svg') left top no-repeat,
+    url('./images/bg-pattern-bottom-desktop.svg') right bottom no-repeat;
+  height: 100vh;
+  font-family: 'Spartan', sans-serif;
+}
+
+p {
+  font-size: 15px;
+  font-weight: 400;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'title reviews';
+
+  gap: 20px;
+  margin-top: 150px;
+  margin-bottom: 60px;
+}
+
+.title {
+  grid-area: title;
+  text-align: left;
+}
+
+.title > h1 {
+  font-size: 2.5rem;
+  color: var(--primary-Very-Dark-Magenta);
+  margin-bottom: 20px;
+}
+
+.title > p {
+  color: var(--neutral-Dark-Grayish-Magenta);
+}
+
+.reviews {
+  grid-area: reviews;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.review {
+  width: 400px;
+  height: 30px;
+  padding: 25px 20px;
+  background-color: var(--neutral-Light-Grayish-Magenta);
+  display: inline-flex;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+  border-radius: 5px;
+}
+
+.review > p {
+  color: var(--primary-Very-Dark-Magenta);
+  font-weight: bold;
+}
+
+.r2 {
+  margin-left: 40px;
+}
+
+.r3 {
+  margin-left: 80px;
+}
+
+/* Testimonials */
+.testimonials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  width: 340px;
+  height: 220px;
+  background-color: var(--primary-Very-Dark-Magenta);
+  color: var(--neutral-White);
+  padding: 40px 30px;
+  border-radius: 7px;
+}
+
+.card > div > img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+}
+
+.card > div {
+  display: inline-flex;
+  margin-bottom: 20px;
+}
+
+.card > div > div > h4 {
+  margin-bottom: 5px;
+}
+
+.card > div > div > p {
+  color: var(--primary-Soft-Pink);
+}
+
+.card-2 {
+  margin-top: 15px;
+}
+
+.card-3 {
+  margin-top: 30px;
+}
+
+@media (max-width: 375px) {
+  body {
+    background: url('./images/bg-pattern-top-mobile.svg') left top no-repeat,
+      url('./images/bg-pattern-bottom-mobile.svg') right bottom no-repeat;
+    height: auto;
+  }
+  .container {
+    width: 90%;
+    margin-bottom: 80px;
+  }
+
+  .head {
+    grid-template-areas:
+      'title title'
+      'reviews reviews';
+    gap: 0;
+    margin-top: 80px;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .reviews {
+    margin-top: 30px;
+  }
+
+  .review {
+    flex-direction: column;
+    text-align: center;
+    margin: 20px 0;
+    padding: 40px 0;
+    width: 100%;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .r2 {
+    margin-left: 0;
+  }
+
+  .r3 {
+    margin-left: 0;
+  }
+
+  .card {
+    margin: 20px 0;
+    width: 100%;
+  }
+
+  .card-2 {
+    margin-top: 0;
+  }
+
+  .card-3 {
+    margin-top: 0;
+  }
+}
